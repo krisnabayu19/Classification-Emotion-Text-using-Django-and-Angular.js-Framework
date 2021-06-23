@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "62959b92-5ed1-4d45-8fb3-96b73900cd74"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -28,12 +31,33 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/img/sidebar-1.jpg",
+              "src/assets/img/sidebar-2.jpg",
+              "src/assets/img/sidebar-3.jpg",
+              "src/assets/img/sidebar-4.jpg"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/material-dashboard-dark-edition/assets/img/apple-icon.png",
+              "node_modules/material-dashboard-dark-edition/assets/img/favicon.png",
+              "node_modules/material-dashboard-dark-edition/assets/css/material-dashboard.css",
+              "node_modules/material-dashboard-dark-edition/assets/demo/demo.css",
+              "node_modules/material-dashboard-dark-edition/assets/img/sidebar-1.jpg",
+              "node_modules/material-dashboard-dark-edition/assets/img/sidebar-2.jpg",
+              "node_modules/material-dashboard-dark-edition/assets/img/sidebar-3.jpg",
+              "node_modules/material-dashboard-dark-edition/assets/img/sidebar-4.jpg"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/material-dashboard-dark-edition/assets/js/core/jquery.min.js",
+              "node_modules/material-dashboard-dark-edition/assets/js/core/popper.min.js",
+              "node_modules/material-dashboard-dark-edition/assets/js/core/bootstrap-material-design.min.js",
+              "node_modules/material-dashboard-dark-edition/assets/js/plugins/perfect-scrollbar.jquery.min.js",
+              "node_modules/material-dashboard-dark-edition/assets/js/plugins/chartist.min.js",
+              "node_modules/material-dashboard-dark-edition/assets/js/plugins/bootstrap-notify.js",
+              "node_modules/material-dashboard-dark-edition/assets/js/material-dashboard.js",
+              "node_modules/material-dashboard-dark-edition/assets/demo/demo.js"
+            ]
           },
           "configurations": {
             "production": {

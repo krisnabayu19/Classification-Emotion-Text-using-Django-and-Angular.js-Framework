@@ -1,0 +1,178 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-success card-header-icon" *ngIf="dataDashboard">
+            <div class="card-icon">
+              <i class="material-icons">mood</i>
+            </div>
+            <p class="card-category text-white">Emosi Bahagia</p>
+            <h3 class="card-title text-white">{{dataDashboard.value_card_bahagia}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-danger card-header-icon" *ngIf="dataDashboard">
+            <div class="card-icon">
+              <i class="material-icons">mood_bad</i>
+            </div>
+            <p class="card-category text-white">Emosi Tidak Bahagia</p>
+            <h3 class="card-title text-white">{{dataDashboard.value_card_tidakbahagia}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header card-header-info card-header-icon" *ngIf="dataDashboard">
+            <div class="card-icon">
+              <i class="fa fa-twitter"></i>
+            </div>
+            <p class="card-category text-white">Data Twitter</p>
+            <h3 class="card-title text-white">{{dataDashboard.value_card_total}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Maps  -->
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="card">
+          <div class="card-header card-header-tabs card-header-primary">
+            <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                <ul class="nav nav-tabs" data-tabs="tabs">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#bahagia-maps" data-toggle="tab">
+                      <i class="material-icons">mood</i>Bahagia
+                      <div class="ripple-container"></div>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tidakbahagia-maps" data-toggle="tab">
+                      <i class="material-icons">mood_bad</i>Tidak Bahagia
+                      <div class="ripple-container"></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="tab-content">
+              <div class="tab-pane active" id="bahagia-maps">
+                <highcharts-chart
+                id="container" 
+                [Highcharts]="Highcharts"
+                [constructorType]="chartConstructor"
+                [options]="chartOptionsMapsBahagia"
+                 style="width: 100%; height: 400px; display: block;">
+              </highcharts-chart>          
+              </div>
+              <div class="tab-pane" id="tidakbahagia-maps">
+                <highcharts-chart
+                id="container" 
+                [Highcharts]="Highcharts"
+                [constructorType]="chartConstructor"
+                [options]="chartOptionsMapsTidakBahagia"
+                 style="width: 100%; height: 400px; display: block;">
+              </highcharts-chart> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Maps  -->
+
+    <!-- Line -->
+    <div class="row">
+      <div class="col-xl-12 col-lg-12">
+        <div class="card card-chart">
+          <div class="card-header" *ngIf="!loading && chartOptionsLine">
+            <highcharts-chart 
+            [Highcharts]="Highcharts" 
+            [options]="chartOptionsLine"
+            style = "width: 100%; height: 400px; display: block;"
+            >
+          </highcharts-chart>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Grafik Klasifikasi Emosi Selisih Persentase</h4>
+            <p class="card-category">Emosi Bahagia dan Emosi Tidak Bahagia</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Line -->
+
+    <!-- Bar -->
+    <div class="row">
+      <div class="col-xl-6 col-lg-12">
+        <div class="card card-chart">
+          <div class="card-header" *ngIf="!loading && chartOptionsBar">
+            <highcharts-chart 
+            [Highcharts]="Highcharts" 
+            [options]="chartOptionsBar"
+            style = "width: 100%; height: 400px; display: block;"
+            >
+          </highcharts-chart>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Grafik Klasifikasi Emosi Bentuk Bar</h4>
+            <p class="card-category">Emosi Bahagia dan Emosi Tidak Bahagia</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bar -->
+
+      <!-- Pie -->
+      <div class="col-xl-6 col-lg-12">
+        <div class="card card-chart">
+          <div class="card-header" *ngIf="!loading && chartOptionsPie">
+            <highcharts-chart 
+            [Highcharts]="Highcharts" 
+            [options]="chartOptionsPie"
+            style = "width: 100%; height: 400px; display: block;"
+            >
+           </highcharts-chart>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Grafik Klasifikasi Emosi Bentuk Pie</h4>
+            <p class="card-category">Emosi Bahagia dan Emosi Tidak Bahagia</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">update</i> Just Updated
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

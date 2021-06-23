@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card">
+        <div class="card-header card-header-primary">
+            <h4 class="card-title">Cek Klasifikasi Emosi</h4>
+            <p class="card-category">Emosi Bahagia dan Emosi Tidak Bahagia</p>
+        </div>
+        <div class="card-body">
+            <div  class="row">
+            <div class="col-xl-6 col-md-12">
+                <div class="form-group">
+                <form>
+                    <label>Masukan Teks</label>
+                    <textarea
+                    class="form-control"
+                    id="text"
+                    required
+                    [(ngModel)]="dataCheckEmotion.text"
+                    name="text" rows="8"
+                  ></textarea>
+                    <br>
+                    <button (click)="saveTutorial()" class="btn btn-primary">Cek Klasifikasi Emosi</button>
+                </form>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-12">
+                <div class="form-group">
+                <form>
+                    <label>Hasil Klasifikasi Emosi</label>
+                    <textarea type="text" class="form-control" rows="8" disabled>{{dataHasilCheck}}</textarea>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>               
+        </div>
+    </div>
+    </div>
+</div>

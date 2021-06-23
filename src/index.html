@@ -1,13 +1,38 @@
 <!doctype html>
 <html lang="en">
+<style>
+  body {
+      margin: 20px;
+  }
+  #topheader navbar-nav li > a {
+      text-transform: capitalize;
+      color: #ffffff;
+      -webkit-transition: background-color .2s, color .2s;
+      transition: background-color .2s, color .2s;
+  }
+  #topheader .navbar-nav li > a:hover{
+    background-color: #565656;
+    opacity: 15%;
+    color: #ffffff;
+
+  } 
+  #topheader .navbar-nav li > a:focus {
+      background-color: #832ba0;
+      color: #ffffff;
+  }
+</style>
 <head>
   <meta charset="utf-8">
-  <title>Frontend</title>
+  <title>Big Data Klasifikasi Emosi</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon.png">
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 </head>
-<body>
+<body class="dark-edition">
   <app-root></app-root>
 </body>
 </html>
